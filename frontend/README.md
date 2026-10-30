@@ -1,73 +1,42 @@
-# Welcome to your Lovable project
+# Attendify web app
 
-## Project info
+The browser client for Attendify, built with React, TypeScript and Vite. Admins manage users, courses, enrollments and student photos; teachers run live attendance sessions with the camera, review and submit them, and see reports. Students can also log in to see their attendance history and stats.
 
-**URL**: https://lovable.dev/projects/591f224e-c727-4d12-8041-01f95122731e
+The frontend was started from a Lovable template; I built the backend.
 
-## How can I edit this code?
+## Stack
 
-There are several ways of editing your application.
+React 18 · TypeScript · Vite · Tailwind CSS · shadcn/ui · TanStack Query · React Router
 
-**Use Lovable**
+## Run it
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/591f224e-c727-4d12-8041-01f95122731e) and start prompting.
+You need Node.js 18+ and the backend running (see the main README).
 
-Changes made via Lovable will be committed automatically to this repo.
+```bash
+cd frontend
+npm install
+```
 
-**Use your preferred IDE**
+Create `frontend/.env` with the backend address:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+```env
+VITE_API_BASE_URL=http://localhost:8000
+```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Start the dev server, then open <http://localhost:8080>:
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Other scripts: `npm run build` (production build in `dist/`), `npm run preview` (serve the build), `npm run lint`.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Structure
 
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/591f224e-c727-4d12-8041-01f95122731e) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+```
+src/
+  pages/admin/     users, courses, photo upload, attendance records
+  pages/teacher/   courses, live camera, session review, reports
+  pages/student/   dashboard, attendance history, stats
+  components/      shared UI
+```

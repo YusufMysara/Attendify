@@ -1,5 +1,7 @@
 University graduation project.
 
+> **Note:** CI is not set up on `main`, so there are no automated test runs for this repository.
+
 # Attendify
 
 **Face-recognition attendance system for universities** — admins manage users and courses, teachers run live sessions with camera-based check-in, and students track attendance on web and mobile.

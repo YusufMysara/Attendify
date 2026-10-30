@@ -1,16 +1,27 @@
-# student_attendance
+# Attendify student app
 
-A new Flutter project.
+The Flutter mobile app for students. After logging in, a student sees a dashboard with their attendance, their courses and course details, and their full attendance history. It talks to the same FastAPI backend as the web app.
 
-## Getting Started
+## Stack
 
-This project is a starting point for a Flutter application.
+Flutter (Dart 3) · Riverpod for state · Dio for HTTP · flutter_secure_storage for the login token
 
-A few resources to get you started if this is your first Flutter project:
+## Run it
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+You need the Flutter SDK and the backend running (see the main README).
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+cd "Student App"
+flutter pub get
+flutter run
+```
+
+The backend address is set in `lib/config/api_config.dart`. It currently points to an old deployment that is no longer running, so change the URL it returns before running:
+
+- Android emulator: `http://10.0.2.2:8000`
+- Browser or desktop: `http://localhost:8000`
+- Physical phone on the same Wi-Fi: `http://<your computer's IP>:8000`
+
+## Screens
+
+`lib/views/`: splash, login, dashboard, courses, course details, attendance history.
